@@ -1,67 +1,65 @@
-# Iris Clustering with K-Means
+# KMeans Clustering on Iris Dataset with Interactive Visualizations
 
-This project applies the K-Means clustering algorithm to the Iris dataset. The Iris dataset is a famous dataset in machine learning and statistics, which contains 150 observations of iris flowers, with four features for each observation: sepal length, sepal width, petal length, and petal width. The goal is to cluster the dataset into three clusters, corresponding to the three species of iris flowers.
+## Description
 
-## Project Overview
+This project applies the KMeans clustering algorithm to the well-known Iris dataset. The goal is to perform clustering on the dataset and visualize the results interactively using Plotly. The project includes two main parts:
 
-The project demonstrates the following key steps:
+1. **Elbow Method**: Determines the optimal number of clusters.
+2. **Cluster Visualization**: Visualizes the clusters and centroids interactively.
 
-1. **Loading the Iris Dataset**:
-   - The Iris dataset is loaded using the `sklearn.datasets` module.
-   - The data is converted into a Pandas DataFrame for easy manipulation and visualization.
-
-2. **The Elbow Method**:
-   - The Elbow Method is used to determine the optimal number of clusters for K-Means clustering.
-   - The Within-Cluster Sum of Squares (WCSS) is calculated for a range of cluster numbers (1 to 10).
-   - A plot is generated to visualize the WCSS against the number of clusters.
-
-3. **K-Means Clustering**:
-   - The K-Means algorithm is applied to the dataset, with the number of clusters set to 3.
-   - The dataset is then classified into the identified clusters.
-
-4. **Visualizing the Clusters**:
-   - The clusters are visualized using a scatter plot of the first two features (sepal length and sepal width).
-   - The centroids of the clusters are also plotted.
-
-## Dependencies
+## Prerequisites
 
 - Python 3.x
-- Pandas
-- NumPy
-- Matplotlib
-- scikit-learn
+- Required libraries:
+  - `pandas`
+  - `numpy`
+  - `scikit-learn`
+  - `matplotlib`
+  - `plotly`
 
-You can install the required libraries using the following command:
+You can install the required libraries using pip:
 
-    pip install pandas numpy matplotlib scikit-learn
+    pip install pandas numpy scikit-learn matplotlib plotly
+
+## Usage
+
+### Elbow Method
+
+The script first calculates the Within-Cluster Sum of Squares (WCSS) for different numbers of clusters (from 1 to 10). It then generates an interactive plot to visualize the elbow point, helping to determine the optimal number of clusters.
+
+### KMeans Clustering
+
+- The script applies KMeans with 3 clusters to the Iris dataset.
+- It generates an interactive scatter plot of the first two features (sepal length and sepal width) of the Iris dataset, color-coded by the predicted cluster.
+- The centroids of the clusters are also plotted.
+
+## Analysis of Results
+
+### Elbow Method
+
+The Elbow Method was used to determine the optimal number of clusters for the Iris dataset. The WCSS was calculated for 1 to 10 clusters, and the results were plotted. The "elbow" in the graph indicates the point where adding more clusters doesn't significantly reduce the WCSS, suggesting the optimal number of clusters.
+
+**Observation**:
+
+- The elbow is observed at **3 clusters**, which aligns with the known classification of the Iris dataset into three species: _Iris-setosa_, _Iris-versicolour_, and _Iris-virginica_.
+
+### KMeans Clustering
+
+KMeans clustering was performed with 3 clusters. The results were visualized by plotting the first two features (sepal length and sepal width) of the Iris dataset. The clusters are well-separated, and the centroids are displayed on the plot.
+
+**Observation**:
+
+- The clusters correspond closely to the three species of Iris flowers.
+- The centroids (marked in yellow) represent the mean position of the data points in each cluster.
+- _Iris-setosa_ is the most distinct cluster, while _Iris-versicolour_ and _Iris-virginica_ are closer to each other, indicating some overlap in features.
+
+### Conclusion
+
+- The clustering results are consistent with the actual species classification of the Iris dataset.
+- KMeans successfully identified the natural grouping of the data, validating the effectiveness of this algorithm for this type of analysis.
 
 
-## How to Run
 
-1. Clone the repository:
-
-    ```bash
-   git clone https://github.com/yourusername/iris-kmeans-clustering.git
-    ```
-
-2. Navigate to the project directory:
-
-    ```bash
-    cd iris-kmeans-clustering
-    ```
-
-3. Run the script:
-
-    ```bash
-    python iris_kmeans.py
-    ```
-
-This will execute the script and display the plots generated during the clustering process.
-
-## Project Structure
-
-- `iris_kmeans.py`: The main Python script that runs the clustering algorithm and generates the plots.
-- `README.md`: Documentation file (
-
+   
 
 
